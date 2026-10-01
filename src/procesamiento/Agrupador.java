@@ -31,7 +31,6 @@ public class Agrupador {
                 colorFond = color;
             }
         }
-        System.out.println("El color de fondo es: " + colorFond);
 
         boolean[][] visitado = new boolean[alto][ancho];
         for(int fila = 0; fila < alto; fila++){
@@ -45,30 +44,15 @@ public class Agrupador {
                     while(cola.isEmpty() == false){
                         int[] actual = cola.poll();
                         pixelesDeEstaFigura.add(actual);
-                        int filaActual = actual[0];
-                        int columnaActual = actual[1];
-                        if(filaActual - 1 >= 0){
-                            if(pixeles[filaActual-1][columnaActual] == colorFigura && visitado[filaActual-1][columnaActual] == false){
-                                cola.add(new int[]{filaActual-1, columnaActual});
-                                visitado[filaActual-1][columnaActual] = true;
-                            }
-                        }
-                        if(filaActual +1 < alto){
-                            if(pixeles[filaActual+1][columnaActual] == colorFigura && visitado[filaActual + 1][columnaActual] == false){
-                                cola.add(new int[]{filaActual+1, columnaActual});
-                                visitado[filaActual+1][columnaActual] = true;
-                            }
-                        }
-                        if(columnaActual - 1 >= 0){
-                            if(pixeles[filaActual][columnaActual-1] == colorFigura && visitado[filaActual][columnaActual-1] == false){
-                                cola.add(new int[]{filaActual, columnaActual - 1});
-                                visitado[filaActual][columnaActual-1] = true;
-                            }
-                        }
-                        if(columnaActual + 1 < ancho){
-                            if(pixeles[filaActual][columnaActual+1] == colorFigura  && visitado[filaActual][columnaActual+1] == false){
-                                cola.add(new int[]{filaActual, columnaActual+1});
-                                visitado[filaActual][columnaActual+1] = true;
+			for(int df = -1; df <= 1; df++){
+                            for(int dc = -1; dc <= 1; dc++){
+                                int nf = actual[0] + df;
+                                int nc = actual[1] + dc;
+                                if(nf >= 0 && nf < alto && nc >= 0 && nc < ancho
+				   && !visitado[nf][nc] && pixeles[nf][nc] == colorFigura){
+                                    visitado[nf][nc] = true;
+                                    cola.add(new int[]{nf, nc});
+                                }
                             }
                         }
                     }
@@ -77,7 +61,7 @@ public class Agrupador {
             }
         }
     }
-
+    
     public List<List<int[]>> getFigurasEncontradas() { 
         return figurasEncontradas; 
     }

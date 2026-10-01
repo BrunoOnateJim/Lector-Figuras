@@ -1,0 +1,18 @@
+archivo,figuras_esperadas,comentario
+01_cuadrado.bmp,C:#FF0000,ancho 200 (multiplo de 4)
+02_rectangulo_ancho201.bmp,C:#0000FF,ancho 201: prueba del relleno de filas
+03_rombo_ancho203.bmp,C:#00C800,ancho 203 (padding de 1 byte)
+04_trapecio.bmp,C:#FF8000,
+05_cuatro_triangulos.bmp,T:#FF0000;T:#0000FF;T:#00C800;T:#9600C8,equilatero, isosceles, escaleno y rectangulo
+06_circulo.bmp,O:#FFDC00,
+07_cuadrado_rotado.bmp,C:#00C8C8,rotacion arbitraria
+08_triangulo_rotado.bmp,T:#FF0000,rotacion arbitraria
+09_figuras_otras.bmp,X:#0000FF;X:#00C800;X:#9600C8;X:#FF8000,elipse, pentagono, hexagono y estrella
+10_mezcla_fondo_oscuro.bmp,C:#FF0000;T:#FFDC00;O:#00C8C8;X:#00C800;C:#9600C8,fondo no blanco, 5 figuras
+11_triangulo_32bits.bmp,T:#00C800,BMP de 32 bits
+12_rectangulo_arriba_abajo.bmp,C:#FF0000,BMP top-down (alto negativo)
+13_sin_figuras.bmp,,solo fondo: debe decir que no hay figuras
+inv_8bits.bmp,ERROR,entrada invalida: mensaje de error claro
+inv_truncado.bmp,ERROR,entrada invalida: mensaje de error claro
+inv_texto.bmp,ERROR,entrada invalida: mensaje de error claro
+inv_formato.png,ERROR,entrada invalida: mensaje de error claro
