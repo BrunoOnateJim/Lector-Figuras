@@ -1,13 +1,10 @@
 package io;
+
 import java.io.DataInputStream;
 import java.io.FileInputStream;
-import java.io.IOException; 
-public class LectorBMP{
-    int ancho;
-    int alto;
-    int[][] pixeles;
+import java.io.IOException;
 
-    public class LectorBMP {
+public class LectorBMP {
     private int ancho;
     private int alto;
     private int[][] pixeles;
@@ -54,14 +51,13 @@ public class LectorBMP{
         return (d[i] & 0xff) | ((d[i + 1] & 0xff) << 8) | ((d[i + 2] & 0xff) << 16) | ((d[i + 3] & 0xff) << 24);
     }
 
-
-    public int[][] getPixeles(){
-        return pixeles;
+    public int[][] getPixeles() {
+	return pixeles;
     }
-    public int getAncho(){
-        return ancho;
+    public int getAncho() {
+	return ancho;
     }
-    public int getAlto(){
-        return alto;
+    public int getAlto() {
+	return alto;
     }
 }
