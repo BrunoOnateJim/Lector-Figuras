@@ -81,7 +81,7 @@ Si la entrada no es válida, el programa avisa con un mensaje claro en lugar de 
 - **3. Invariancia.** El resultado no depende de la rotación, posición ni tamaño de la figura (probado con figuras de 30 px o más).
 - **4. Portabilidad.** Funciona desde terminal con Java y Ant, sin dependencias externas.
 - **5. Mantenibilidad.** Código dividido en paquetes con una responsabilidad cada uno, constantes con nombre y documentación en docs/clasificacion.md.
-- **6. Verificabilidad.** Banco de 17 imágenes con resultados esperados y un script que los comprueba con un solo comando.
+- **6. Verificabilidad.** Banco de 17 imágenes con resultados esperados.
 
 
 ## 4. Selección de la mejor alternativa
@@ -110,7 +110,7 @@ El programa trabaja en dos etapas. Primero **dividir**: toma como fondo el color
 
 **Por qué la elegida.** Opera solo con enteros y geometría, es invariante a rotación, posición y tamaño, no necesita datos de entrenamiento y sus parámetros tienen significado geométrico (grosor de una recta digital en píxeles, grado de giro de una esquina, porcentaje de variación del radio). Su costo es que es más compleja de implementar y que sus constantes se ajustaron con pruebas; con figuras de menos de unos 25 píxeles falla.
 
-**Pruebas.** Se probaron 19 tipos de figura en 7 tamaños y 24 rotaciones cada una: con figuras de 30 px o más, los aciertos fueron de 97 a 100% por tipo (detalle en docs/clasificacion.md). Además, el banco de tests/banco_imagenes (17 casos) se verifica con tests/verificar.py: 17 de 17 correctos.
+**Pruebas.** Se probaron 19 tipos de figura en 7 tamaños y 24 rotaciones cada una: con figuras de 30 px o más, los aciertos fueron de 97 a 100% por tipo (detalle en docs/clasificacion.md). Además, el banco de tests/banco_imagenes (17 casos) se verifica con tests: 17 de 17 correctos.
 
 
 ## 5. Diagrama de flujo y pseudocódigo
